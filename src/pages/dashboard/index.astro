@@ -1,0 +1,18 @@
+---
+import { ClerkLayout } from "astro-clerk-auth/components/control";
+const currentUser = Astro.locals.auth();
+console.log(currentUser);
+---
+
+<ClerkLayout>
+  <div>
+    <h1>Profile</h1>
+    <!-- <p>Hi, {{ currentUser.firstName }}!</p>
+  <p>Your email is: {{ currentUser.emails[0].address }}</p>
+  <p>Your roles are: {{ currentUser.roles.join(', ') }}</p>
+  <p>Your profile is: {{ currentUser.profile }}</p>
+  <p>Your services are: {{ currentUser.services }}</p>
+  <p>Your createdAt is: {{ currentUser.createdAt }}</p>
+  <p>Your updatedAt is: {{ currentUser.updatedAt }} </p> -->
+  </div>
+</ClerkLayout>
