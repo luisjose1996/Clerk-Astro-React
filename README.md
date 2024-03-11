@@ -1,54 +1,44 @@
-# Astro Starter Kit: Basics
+# Community Clerk + Astro + React starter
 
-```sh
-npm create astro@latest -- --template basics
+## What's inside?
+
+Get started managing your users with Clerk in your Astro application with Clerk's React hooks, components, and utilities.
+
+In this starter you'll find examples of:
+
+- Custom Sign-in/up pages
+- Protecting your Dashboard using `clerkMiddleware`
+- A Dashboard that displays current user details using `Astro.locals`
+- Navbar with conditional rendering based on user's authentication status using Clerk's `SignedIn` and `SignedOut` components
+
+## Get started
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/domitriusclark/astro-clerk-react
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2. Install dependencies
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```base
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. Create a Clerk account & application
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+4. Create a `.env` file in the root of your project and add your publishable & secret keys (found in your Clerk application Dashboard) + your expected sign-in and sign-up paths
 
-Any static assets, like images, can be placed in the `public/` directory.
+```
+PUBLIC_ASTRO_APP_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
 
-## 🧞 Commands
+PUBLIC_ASTRO_APP_CLERK_SIGN_IN_URL=/sign-in
+PUBLIC_ASTRO_APP_CLERK_SIGN_UP_URL=/sign-up
+```
 
-All commands are run from the root of the project, from a terminal:
+5. Start the server
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm run dev
+```
