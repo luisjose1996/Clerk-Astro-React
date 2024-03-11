@@ -1,0 +1,63 @@
+---
+import {
+  UserButton,
+  SignedIn,
+  SignedOut,
+} from "astro-clerk-auth/components/react";
+
+const user = await Astro.locals.currentUser();
+---
+
+<nav>
+  <div>
+    <SignedIn>
+      <h1>Hello, {user?.firstName}</h1>
+    </SignedIn>
+    <SignedOut>
+      <h1>Astro + Clerk + React</h1>
+    </SignedOut>
+  </div>
+
+  <div>
+    <SignedOut>
+      <ul>
+        <li>
+          <a href="/" class="">Home</a>
+        </li>
+        <li>
+          <a href="/sign-in" class="sign-in-button">Sign In</a>
+        </li>
+      </ul>
+    </SignedOut>
+    <SignedIn>
+      <UserButton />
+    </SignedIn>
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  ul {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  }
+
+  .sign-in-button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    color: #000;
+    text-decoration: none;
+  }
+</style>

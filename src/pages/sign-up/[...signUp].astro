@@ -4,10 +4,20 @@ import { SignUp } from "astro-clerk-auth/components/react";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Sign Up to Clerk + Astro">
   <ClerkLayout>
-    <div class="w-full flex justify-center">
-      <SignUp />
+    <div>
+      <SignUp path="/sign-up" />
     </div>
   </ClerkLayout>
 </Layout>
+
+<style>
+  div {
+    width: full;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
 import { ClerkLayout } from "astro-clerk-auth/components/control";
-const currentUser = Astro.locals.auth();
+const currentUser = await Astro.locals.currentUser();
 console.log(currentUser);
 ---
 
