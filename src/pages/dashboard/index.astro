@@ -1,18 +1,24 @@
 ---
 import { ClerkLayout } from "astro-clerk-auth/components/control";
-const currentUser = await Astro.locals.currentUser();
-console.log(currentUser);
+import Layout from "../../layouts/Layout.astro";
+import UserJSON from "../../components/UserJSON.astro";
 ---
 
-<ClerkLayout>
-  <div>
-    <h1>Profile</h1>
-    <!-- <p>Hi, {{ currentUser.firstName }}!</p>
-  <p>Your email is: {{ currentUser.emails[0].address }}</p>
-  <p>Your roles are: {{ currentUser.roles.join(', ') }}</p>
-  <p>Your profile is: {{ currentUser.profile }}</p>
-  <p>Your services are: {{ currentUser.services }}</p>
-  <p>Your createdAt is: {{ currentUser.createdAt }}</p>
-  <p>Your updatedAt is: {{ currentUser.updatedAt }} </p> -->
-  </div>
-</ClerkLayout>
+<Layout title="Authenticated Dashboard">
+  <ClerkLayout>
+    <div>
+      <h1>Authenticated Dashboard</h1>
+      <UserJSON />
+    </div>
+  </ClerkLayout>
+</Layout>
+
+<style>
+  div {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

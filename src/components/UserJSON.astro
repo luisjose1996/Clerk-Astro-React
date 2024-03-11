@@ -1,0 +1,18 @@
+---
+import { Code } from "astro:components";
+const user = await Astro.locals.currentUser();
+---
+
+<div>
+  <h1>Current User Data</h1>
+  <Code code={JSON.stringify(user, null, 2)} lang={"json"} wrap />
+</div>
+
+<style>
+  div {
+    width: 50%;
+    height: 320px;
+    color: white;
+    overflow: scroll;
+  }
+</style>
