@@ -19,19 +19,22 @@ const user = await Astro.locals.currentUser();
   </div>
 
   <div>
-    <SignedOut>
-      <ul>
-        <li>
-          <a href="/" class="">Home</a>
-        </li>
+    <ul>
+      <li>
+        <a href="/" class="">Home</a>
+      </li>
+      <SignedOut>
         <li>
           <a href="/sign-in" class="sign-in-button">Sign In</a>
         </li>
-      </ul>
-    </SignedOut>
-    <SignedIn>
-      <UserButton />
-    </SignedIn>
+      </SignedOut>
+      <SignedIn>
+        <li>
+          <a href="/dashboard">Dashboard</a>
+        </li>
+        <UserButton />
+      </SignedIn>
+    </ul>
   </div>
 </nav>
 
@@ -51,6 +54,18 @@ const user = await Astro.locals.currentUser();
     align-items: center;
     justify-content: center;
     list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   .sign-in-button {
